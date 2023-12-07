@@ -16,6 +16,7 @@ async fn main(
 
     let router = Router::new()
         .route("/todos", get(handlers::get_todos))
+        .route("/todos", post(handlers::post_todos))
         .route("/register", post(handlers::register))
         .layer(Extension(pool))
         .layer(Extension(secret_store));
